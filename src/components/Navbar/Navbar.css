@@ -1,0 +1,216 @@
+/* Header */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--header-bg-blur);
+  color: var(--white-color);
+  padding: 12px 0;
+  box-shadow: var(--nav-shadow);
+  z-index: 1000;
+  transition: all 0.5s var(--transition-smooth);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+.main-header.scrolled {
+  background-color: var(--header-bg-scrolled);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 2px 0;
+}
+
+.main-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1340px;
+  /* background: red; */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Logo Styles */
+.main-header .logo h1 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  color: var(--dark-color);
+  margin: 0;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.main-header .logo h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1002;
+}
+
+.hamburger {
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  position: relative;
+}
+
+.hamburger-line {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--dark-color);
+  left: 0;
+  border-radius: 3px;
+  transition: all 0.3s var(--transition-smooth);
+}
+
+.hamburger-line:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-line:nth-child(3) {
+  bottom: 0;
+}
+
+/* menu - transform  X */
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* Main Navigation */
+.main-nav ul {
+  display: flex;
+  gap: clamp(15px, 2vw, 25px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav ul li a {
+  color: var(--dark-color);
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+  padding: 5px 0;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.main-nav ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: var(--dark-color);
+  transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+  width: 100%;
+}
+
+.main-nav ul li a:hover {
+  color: var(--bs-gray-800);
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* header */
+  .menu-toggle {
+    display: block;
+  }
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100dvh;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: 80px 20px 20px;
+    transition: all 0.5s var(--transition-smooth);
+    z-index: 1001;
+    overflow-y: auto;
+  }
+
+  .main-nav.active {
+    right: 0;
+  }
+
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .main-nav li {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+
+  .main-nav li:hover {
+    background-color: rgba(240, 240, 240, 0.9);
+  }
+
+  /* Saat scroll padding tetap konsisten */
+  .main-header.scrolled .main-nav {
+    padding-top: 70px;
+  }
+}
