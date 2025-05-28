@@ -29,7 +29,7 @@ function HeroSection() {
 
   const openModal = () => {
     setIsModalOpen(true);
-    document.body.style.overflow = "hidden"; // Matikan scroll
+    document.body.style.overflow = "hidden"; 
 
     setTimeout(() => {
       if (videoRef.current) {
@@ -231,15 +231,6 @@ function SectionDescription() {
       <div className="description-wrap">
         <div className="img-wrapper">
           <div className="img-container">
-            {/* 
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31709.467082367086!2d107.76811926910234!3d-6.561590679615411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e693b9ae39cc0eb%3A0x76db7b3959df2011!2sPoliteknik%20Negeri%20Subang%2C%20Kampus%20Utama%20Cibogo!5e0!3m2!1sid!2sid!4v1739072152156!5m2!1sid!2sid"
-                className="map-frame"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe> 
-              */}
             <img
               className="img-frame"
               src={Photo1}
@@ -327,14 +318,14 @@ function ActivitiesFacilities() {
 function Spotlight() {
   const cardsData = [
     {
-      imgSrc: "./assets/images/spotlight/ExoticJourneyThroughMangroves.png",
+      imgSrc: "./assets/images/article/gambar4.jpg",
       alt: "Mangrove Forest",
       title: "Exotic Journey Through Mangroves",
       desc: "To get to the beach, visitors must take a fishing boat along the river for 1 km through a beautiful mangrove forest.",
     },
 
     {
-      imgSrc: "./assets/images/spotlight/SidaonBay.png",
+      imgSrc: "./assets/images/gallery/gallery1.jpeg",
       alt: "Sidaon Bay",
       title: "Sidaon Bay",
       desc: "Bay is a great place to go fishing. You can catch fish and other animals that live in the sea there.",
@@ -347,7 +338,7 @@ function Spotlight() {
     },
 
     {
-      imgSrc: "./assets/images/spotlight/NaturalWaveBarrier.png",
+      imgSrc: "./assets/images/article/gambar5.jpg",
       alt: "Natural Barrier",
       title: "Natural Wave Barrier",
       desc: 'This raised land becomes a "natural fortress" that keeps the waves from hitting directly.',
@@ -356,11 +347,10 @@ function Spotlight() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardContainerRef = useRef(null);
 
-  // Swipe handling state
+
   const touchStartXRef = useRef(0);
   const touchEndXRef = useRef(0);
 
-  // Scroll to current card when currentIndex changes
   useEffect(() => {
     const container = cardContainerRef.current;
     if (!container) return;
@@ -379,7 +369,6 @@ function Spotlight() {
     });
   }, [currentIndex]);
 
-  // Handlers for buttons
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % cardsData.length);
   };
@@ -426,7 +415,7 @@ function Spotlight() {
             </p>
 
             <a href="#" className="btn-outline">
-              Explore Indonesia's Hallmark
+              Discover Subang's Coastal Gem.
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -716,7 +705,6 @@ const ArticleSection = () => {
   const [showPrevButton, setShowPrevButton] = useState(false);
   const [showNextButton, setShowNextButton] = useState(true);
 
-  // Fungsi untuk mengecek posisi scroll
   const checkScrollPosition = () => {
     if (carouselRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;

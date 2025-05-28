@@ -7,7 +7,7 @@ const MainLayout = ({ children }) => {
   const location = useLocation();
 
   useEffect(() => {
-    // console.clear(); 
+    console.clear(); 
 
     if (location.hash) {
       const el = document.querySelector(location.hash);

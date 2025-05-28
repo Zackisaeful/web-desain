@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
 import PlanYourVisit from "./pages/PlanYourVisit/Index";
 
-// Lazy load pages
 const Home = lazy(() => import("./pages/Home/"));
 
 function App() {

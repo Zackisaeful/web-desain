@@ -2,42 +2,29 @@
 @import "tailwindcss";
 
 :root {
-  /* === Warna Utama dan Sekunder === */
   --primary-blue: #0a7fad;
   --secondary-green: #3d8c61;
   --neutral-beige: #f8f5ee;
   --accent-yellow: #ffc107;
   --accent-color: #ffc107;
-
-  /* === Warna Teks === */
   --text-dark: #333;
   --text-dark-alt: #2c3e50;
   --text-light: #ffffff;
-
-  /* === Warna Latar === */
   --light-color: #f5f5f5;
   --dark-color: #212121;
   --gray-color: #757575;
   --white-color: #ffffff;
   --footer-bg: #020b22;
   --header-bg: #add8e6;
-
-  /* === Status & Feedback === */
   --success-color: #4caf50;
   --error-color: #f44336;
-
-  /* === Bayangan === */
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-
-  /* === Navbar & Layout === */
   --header-bg-blur: rgba(255, 255, 255, 0.2);
   --header-bg-scrolled: white;
   --nav-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   --transition-smooth: ease-in-out;
-
-  /* === Bootstrap Variables === */
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -88,13 +75,10 @@
   --bs-primary-bg-subtle: #cfe2ff;
   --bs-secondary-bg-subtle: #e2e3e5;
   --bs-success-bg-subtle: #d1e7dd;
-
-  /* === Warna Utama & Aksen (terinspirasi iOS) === */
-  --ios-blue: #007aff; /* Biru khas iOS untuk tombol utama, link */
-  --ios-green: #34c759; /* Hijau untuk sukses, tombol positif */
-  --ios-red: #ff3b30; /* Merah untuk logout, peringatan */
-  --ios-orange: #ff9500; /* Oranye untuk warning, highlight */
-
+  --ios-blue: #007aff; 
+  --ios-green: #34c759;
+  --ios-red: #ff3b30;
+  --ios-orange: #ff9500; 
   --ios-gray-50: #f9f9f9;
   --ios-gray-100: #f2f2f7;
   --ios-gray-200: #e5e5ea;
@@ -106,32 +90,23 @@
   --ios-gray-800: #48484a;
   --ios-black: #000000;
   --ios-white: #ffffff;
-
   --text-primary: var(--ios-gray-800);
   --text-secondary: var(--ios-gray-600);
   --text-light: var(--ios-white);
-
   --bg-default: var(--ios-gray-100);
   --bg-card: var(--ios-white);
   --bg-footer: var(--ios-gray-800);
-
   --navbar-bg-glass: rgba(255, 255, 255, 0.7);
   --navbar-bg-scrolled: var(--ios-white);
   --navbar-shadow-scrolled: 0 2px 10px rgba(0, 0, 0, 0.08);
-
-  /*  Shadows iOS*/
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 3px 8px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.1);
-
-  /* === Border Radius === */
   --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-full: 9999px;
-
-  /* === Transisi === */
   --transition-fast: 0.15s ease-out;
   --transition-medium: 0.3s ease-in-out;
 }

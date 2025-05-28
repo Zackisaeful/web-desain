@@ -209,7 +209,6 @@
     background-color: rgba(240, 240, 240, 0.9);
   }
 
-  /* Saat scroll padding tetap konsisten */
   .main-header.scrolled .main-nav {
     padding-top: 70px;
   }
