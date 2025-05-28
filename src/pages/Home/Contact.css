@@ -2,7 +2,7 @@
   min-height: 70vh;
   padding: 60px 0px;
   display: flex;
-
+  background-color: var(--ios-gray-50);
 }
 
 .contact-form-section {
@@ -106,7 +106,7 @@
 
 /* Contact Form Section */
 .contact-form-section {
-  background-color: var(--ios-gray-50);
+  background-color: var(--ios-white);
 }
 
 .question-form {
