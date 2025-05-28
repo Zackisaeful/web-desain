@@ -337,7 +337,7 @@
 /* Activities & Facilities Section */
 .facilities-section {
   padding: 60px 5%;
-  background-color: var(--white-color);
+  background-color: var(--ios-white);
 }
 
 .section-title {
@@ -637,6 +637,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 80px 20px;
+  background-color: var(--ios-white);
 }
 
 .section-header {
