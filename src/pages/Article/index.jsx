@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import allArticles from "./data.js"; 
-import "./Article.css"; 
+import allArticles from "./data.js";
+import "./Article.css";
 
 const Article = () => {
   const { slug } = useParams();
@@ -13,7 +13,7 @@ const Article = () => {
 
   return (
     <section>
-      <div className="article-container">
+      <div className="article-container" id="top">
         <div className="article-content">
           <div className="article-header">
             <h1 className="article-title">{article.title}</h1>

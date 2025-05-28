@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 import { IoClose } from "react-icons/io5";
 
 const Home = () => {
+  
+  
   return (
     <>
       <HeroSection />
@@ -53,7 +55,7 @@ function HeroSection() {
 
   return (
     <section
-      id="hero"
+      id="top"
       className="hero-section bg-gradient-to-b from-blue-50 to-emerald-50"
     >
       <div className="container mx-auto px-6 py-16">
@@ -396,7 +398,7 @@ function Spotlight() {
   const formatNumber = (num) => (num < 9 ? `0${num + 1}` : num + 1);
 
   return (
-    <section className="s-spotlight">
+    <section className="s-spotlight" id="spot">
       <h2 className="section-title">Spotlight</h2>
 
       {/* Text */}
@@ -414,7 +416,7 @@ function Spotlight() {
               fishing and serenity.
             </p>
 
-            <a href="#" className="btn-outline">
+            <Link to={"/plan-your-visit"} className="btn-outline">
               Discover Subang's Coastal Gem.
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -430,7 +432,7 @@ function Spotlight() {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </a>
+            </Link>
           </div>
 
           {/* Cards with right edge overflow */}
@@ -446,7 +448,7 @@ function Spotlight() {
             >
               {cardsData.map(({ imgSrc, alt, title, desc }, index) => (
                 <div className="card" key={index}>
-                  <a href="#" className="card-img">
+                  <a href="#spot" className="card-img">
                     <img src={imgSrc} alt={alt} />
                     <div className="card-img-body">
                       <h4>{title}</h4>

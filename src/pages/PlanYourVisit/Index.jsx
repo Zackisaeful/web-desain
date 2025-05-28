@@ -5,7 +5,7 @@ import "./Contact.css";
 const PlanYourVisit = () => {
   return (
     <>
-      <section className="plan-your-visit">
+      <section className="plan-your-visit"   id="top">
         <div className="wrap-plan">
           <h1>
             Embark on a unique adventure to Cirewang Beach: A serene escape in

@@ -7,9 +7,8 @@ import {
   IoArrowForward,
   IoAdd,
   IoRemove,
-  IoRefresh
-} from 'react-icons/io5';
-
+  IoRefresh,
+} from "react-icons/io5";
 
 const images = [
   {
@@ -99,11 +98,11 @@ const Gallery = () => {
   };
 
   const zoomIn = () => {
-    setScale(prev => Math.min(prev + 0.25, 3));
+    setScale((prev) => Math.min(prev + 0.25, 3));
   };
 
   const zoomOut = () => {
-    setScale(prev => Math.max(prev - 0.25, 0.5));
+    setScale((prev) => Math.max(prev - 0.25, 0.5));
   };
 
   const resetZoom = () => {
@@ -114,28 +113,28 @@ const Gallery = () => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (!selectedImage) return;
-      
-      if (e.key === 'Escape') {
+
+      if (e.key === "Escape") {
         closeModal();
-      } else if (e.key === 'ArrowLeft') {
+      } else if (e.key === "ArrowLeft") {
         prevImage();
-      } else if (e.key === 'ArrowRight') {
+      } else if (e.key === "ArrowRight") {
         nextImage();
-      } else if (e.key === '+') {
+      } else if (e.key === "+") {
         zoomIn();
-      } else if (e.key === '-') {
+      } else if (e.key === "-") {
         zoomOut();
-      } else if (e.key === '0') {
+      } else if (e.key === "0") {
         resetZoom();
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedImage, currentIndex]);
 
   return (
-    <section className="gallery-section">
+    <section className="gallery-section" id="top">
       <h2 className="section-title-gallery">Gallery</h2>
       <div className="gallery-container">
         {images.map((image, index) => (
@@ -143,7 +142,9 @@ const Gallery = () => {
             className="gallery-item"
             key={index}
             style={{
-              gridRowEnd: `span ${Math.round((image.height / image.width) * 20)}`,
+              gridRowEnd: `span ${Math.round(
+                (image.height / image.width) * 20
+              )}`,
             }}
             onClick={() => openModal(index)}
           >
@@ -153,38 +154,38 @@ const Gallery = () => {
       </div>
 
       {selectedImage && (
-       <div className="gallery-modal" style={{ display: 'block' }}>
-      <span className="gallery-close-modal" onClick={closeModal}>
-        <IoClose />
-      </span>
-      <div className="gallery-modal-content">
-        <img
-          src={selectedImage.src}
-          alt={selectedImage.alt}
-          className="modal-image-container"
-          style={{ transform: `scale(${scale})` }}
-        />
-        <div className="gallery-modal-nav">
-          <button className="gallery-modal-prev" onClick={prevImage}>
-            <IoArrowBack />
-          </button>
-          <button className="gallery-modal-next" onClick={nextImage}>
-            <IoArrowForward />
-          </button>
+        <div className="gallery-modal" style={{ display: "block" }}>
+          <span className="gallery-close-modal" onClick={closeModal}>
+            <IoClose />
+          </span>
+          <div className="gallery-modal-content">
+            <img
+              src={selectedImage.src}
+              alt={selectedImage.alt}
+              className="modal-image-container"
+              style={{ transform: `scale(${scale})` }}
+            />
+            <div className="gallery-modal-nav">
+              <button className="gallery-modal-prev" onClick={prevImage}>
+                <IoArrowBack />
+              </button>
+              <button className="gallery-modal-next" onClick={nextImage}>
+                <IoArrowForward />
+              </button>
+            </div>
+            <div className="gallery-modal-zoom">
+              <button className="gallery-zoom-in" onClick={zoomIn}>
+                <IoAdd />
+              </button>
+              <button className="gallery-zoom-out" onClick={zoomOut}>
+                <IoRemove />
+              </button>
+              <button className="gallery-reset-zoom" onClick={resetZoom}>
+                <IoRefresh />
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="gallery-modal-zoom">
-          <button className="gallery-zoom-in" onClick={zoomIn}>
-            <IoAdd />
-          </button>
-          <button className="gallery-zoom-out" onClick={zoomOut}>
-            <IoRemove />
-          </button>
-          <button className="gallery-reset-zoom" onClick={resetZoom}>
-            <IoRefresh />
-          </button>
-        </div>
-      </div>
-    </div>
       )}
     </section>
   );

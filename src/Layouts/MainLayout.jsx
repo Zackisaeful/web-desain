@@ -4,10 +4,12 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const MainLayout = ({ children }) => {
+
+
   const location = useLocation();
 
   useEffect(() => {
-    console.clear(); 
+    console.clear();
 
     if (location.hash) {
       const el = document.querySelector(location.hash);

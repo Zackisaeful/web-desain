@@ -1,7 +1,7 @@
 const allArticles = [
   {
     id: 1,
-    slug: "cirewang-beach-subang-mangrove-charm",
+    slug: "cirewang-beach-subang-guide",
     title:
       "Cirewang Beach Subang: White Sand Charm, Mangroves, and Complete Facilities for Your Vacation!",
     date: "June 5, 2023",

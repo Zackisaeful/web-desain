@@ -6,6 +6,7 @@ import Loading from "./components/Loading";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./Layouts/MainLayout";
 import PlanYourVisit from "./pages/PlanYourVisit/Index";
+import ScrollToTop from "./ScrollToTop";
 
 const Home = lazy(() => import("./pages/Home/"));
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <ScrollToTop />
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route
